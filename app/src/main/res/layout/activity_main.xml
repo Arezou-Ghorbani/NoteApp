@@ -13,9 +13,9 @@
         android:background="@color/white"
         android:elevation="5dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/menu_toolbar"
         app:title="@string/noteApp"
         app:titleCentered="true"
-
 
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

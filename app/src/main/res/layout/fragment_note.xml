@@ -4,17 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".room.ui.add.NoteFragment">
     <!--close btn-->
     <ImageView
         android:id="@+id/closeImg"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_margin="16dp"
         android:rotation="45"
         android:src="@drawable/plus"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     />
+    <!--Tittle-->
+    <EditText
+        android:id="@+id/tittleEdt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/closeImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

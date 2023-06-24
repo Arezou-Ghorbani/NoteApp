@@ -6,10 +6,10 @@
         android:icon="@drawable/search"
         android:title="@string/Search"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
-        app:iconTint="@color/black"
-        app:showAsAction="ifRoom|collapseActionView" />
+          app:showAsAction="ifRoom|collapseActionView" />
     <item
         android:id="@+id/actionFilter"
         android:icon="@drawable/filter"
-        android:title="@string/Filter" />
+        android:title="@string/Filter"
+        app:showAsAction="always" />
 </menu>

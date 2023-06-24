@@ -15,7 +15,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menu_toolbar"
         app:title="@string/noteApp"
-        app:titleCentered="true"
-
-        />
+        app:titleCentered="true" />
+    <!--    List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/noteList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesToolbar" />
+    <!--    Fab Add Note -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNoteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/plus"
+        app:backgroundTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+    <!--    Empty layer -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emptyLayer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notesToolbar"
+        >
+        <include layout="@layout/empty_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

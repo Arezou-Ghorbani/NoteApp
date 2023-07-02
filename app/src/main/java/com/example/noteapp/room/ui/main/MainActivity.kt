@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
+import com.example.noteapp.room.ui.add.NoteFragment
 
 class MainActivity : AppCompatActivity() {
     //Binding
@@ -14,7 +15,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         //initViews
         binding.apply {
+            addNoteBtn.setOnClickListener {
+                NoteFragment().show(
+                    supportFragmentManager,
+                    NoteFragment().tag
+                )
 
+            }
         }
     }
 }

@@ -14,7 +14,11 @@ class NoteFragment : BottomSheetDialogFragment() {
     //binding
     private lateinit var binding: FragmentNoteBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         binding = FragmentNoteBinding.inflate(inflater)
         return binding.root
@@ -24,7 +28,7 @@ class NoteFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         //initViews
         binding.apply {
-
+            closeImg.setOnClickListener { this@NoteFragment.dismiss() }
         }
     }
 }

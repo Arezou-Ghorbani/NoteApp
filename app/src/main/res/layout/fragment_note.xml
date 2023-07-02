@@ -14,6 +14,7 @@
         android:layout_height="30dp"
         android:rotation="45"
         android:src="@drawable/plus"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     />
@@ -129,7 +130,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <Spinner
-                    android:id="@+id/PrioritiesSpinner"
+                    android:id="@+id/prioritiesSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -148,6 +149,7 @@
         android:fontFamily="@font/abel"
         android:paddingHorizontal="50dp"
         android:text="@string/Save"
+        android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:backgroundTint="@color/green"

@@ -16,7 +16,7 @@ class NotePresenter @Inject constructor(
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
-//ui must im in this place
+         //ui must im in this place
                 view.close()
             }
     }

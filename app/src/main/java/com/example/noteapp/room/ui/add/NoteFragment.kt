@@ -9,14 +9,25 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.example.noteapp.R
 import com.example.noteapp.databinding.FragmentNoteBinding
+import com.example.noteapp.room.data.model.NoteEntity
+import com.example.noteapp.room.data.repository.add.AddNoteRepository
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
-class NoteFragment : BottomSheetDialogFragment() {
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+@AndroidEntryPoint
+class NoteFragment : BottomSheetDialogFragment(), NoteContract.View {
 
     //binding
     private lateinit var binding: FragmentNoteBinding
 
+    @Inject
+    lateinit var entity: NoteEntity
+
+    @Inject
+    lateinit var repository: AddNoteRepository
+
     //other
+    private val presenter by lazy { NotePresenter(repository, this) }
     private lateinit var categoriesList: Array<String>
     private lateinit var prioritiesList: Array<String>
     private var category: String = ""
@@ -37,8 +48,22 @@ class NoteFragment : BottomSheetDialogFragment() {
         //initViews
         binding.apply {
             closeImg.setOnClickListener { this@NoteFragment.dismiss() }
+//            spinners
             categoriesSpinnerItems()
             prioritiesSpinnerItems()
+//            save
+            saveBtn.setOnClickListener {
+                val tittle = tittleEdt.text.toString()
+                val desc = desEdt.text.toString()
+//                Entity
+                entity.id = 0
+                entity.tittle = tittle
+                entity.des = desc
+                entity.category = category
+                entity.priority = priority
+//                save
+                presenter.saveNote(entity)
+            }
         }
     }
 
@@ -80,5 +105,14 @@ class NoteFragment : BottomSheetDialogFragment() {
                 }
 
             }
+    }
+
+    override fun close() {
+        this.dismiss()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.onStop()
     }
 }

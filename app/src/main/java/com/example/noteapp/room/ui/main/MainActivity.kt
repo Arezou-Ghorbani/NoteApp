@@ -5,7 +5,9 @@ import android.os.Bundle
 import com.example.noteapp.R
 import com.example.noteapp.databinding.ActivityMainBinding
 import com.example.noteapp.room.ui.add.NoteFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     //Binding
     lateinit var binding: ActivityMainBinding

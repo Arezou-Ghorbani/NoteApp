@@ -33,11 +33,7 @@ class NoteFragment : BottomSheetDialogFragment(), NoteContract.View {
     private var category: String = ""
     private var priority: String = ""
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater,container: ViewGroup?,savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = FragmentNoteBinding.inflate(inflater)
         return binding.root
